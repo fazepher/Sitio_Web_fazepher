@@ -1,0 +1,58 @@
+theme = "soho"
+baseurl = "/"
+title = "Fernando A. Zepeda H."
+enableInlineShortcodes = true
+summarylength = 10
+enableEmoji = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+math = true
+
+[params]
+description = "\"In God we trust, all others bring data\" \n W.Edwards Deming "
+profilePicture = "images/FAZH_01.jpg"
+copyright = "Fernando Antonio Zepeda Herrera"
+license = "CC BY-SA 4.0"
+licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+
+  [[params.socialIcons]]
+  icon = "fa-linkedin"
+  title = "Linkedin"
+  url = "https://www.linkedin.com/in/fernando-antonio-zepeda-herrera-385878166/"
+
+  [[params.socialIcons]]
+  icon = "fa-github"
+  title = "GitHub"
+  url = "https://github.com/fazepher"
+
+  [[params.socialIcons]]
+  icon = "fa-twitter"
+  title = "Twitter"
+  url = "https://twitter.com/fazepher"
+
+[menu]
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 100
+  identifier = "posts"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "About me"
+  identifier = "about"
+  weight = 200
+  url = "/about/"
+  
+
+[markup]
+
+  [markup.highlight]
+  codeFences = true
+  guessSyntax = false
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = true
+  style = "monokai"
+  tabWidth = 4

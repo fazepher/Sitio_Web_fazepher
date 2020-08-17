@@ -1,0 +1,129 @@
+---
+title: "The statistical connection between Gauss and Galton"
+author: "Fernando A. Zepeda H."
+date: "2020-08-02"
+output: html_document
+bibliography: Referencias/biblio_gauss_galton.bib
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+*This entry is an English version of an article originally published in Spanish at the [37th issue](http://laberintos.itam.mx/wp/wp-content/uploads/2017/02/N37.pdf) of ITAM students' mathematics and actuarial science magazine,* Laberintos e Infinitos*.*
+
+Both Karl Friedrich Gauss and Sir Francis Galton made big contributions to the development of Statistics. Gauss discovered the method of least squares, not without having a dispute with Legendre. On the other hand, Galton gave us the Law of Regression towards the Mean.`r htmltools::HTML("{{% marginnote %}}A more politically correct name than his original <i>regression toward mediocrity</i>. {{% /marginnote%}}")`
+
+This post's goal is to present both contributions in a brief manner.
+
+## Gauss and Least Squares
+
+One of history's greatest mathematicians, Gauss was born in Brunswick in 1777 and died in Göttingen in 1855. According to @Finkel01, his favorite field was Number Theory, where he proved on three separate ways that every algebraic equation with integer coeficient has a root of the form 
+$$a + bi.$$ 
+Nevertheless, Gauss didn't limit himself to said Theory. Let us just look at his works, published by the Royal Society of Göttingen: (1) *Disquisitiones Arithmeticae*, (2) Theory of Numbers, (3) Analysis, (4) Geometry and Method of Least Squares, (5) Mathematical Physiscs, (6) Astronomy and (7) *Theoria Motus Corporium Coelestium*. One could say he was the last mathematician with universal interests; they also included literature and philology [@Finkel01].
+
+![Karl Frederich Gauss, figure from @FigGauss](/Gauss_Galton/Gauss.PNG)
+
+In Statistics' history, Gauss holds a very special place, since he discovered the Method of Least Squares. The problem Gauss was facing was, according to his own words [@Plackett72],
+
+> to determine the most probable values of a number of unknown quantities from a *larger* number of observations depending on them. 
+>*Gauss to Olbers. Brunswick, March 24, 1807* 
+
+For Gauss, the solution laid in minimizing the sum of the squared differences between observed and computed values. This is the same principle that Legendre published in 1805 and that originated the dispute between both men, that Gauss summarizes as follows [@Plackett72]:
+
+>... the principle which I have used since 1794, that the sum of squares must be minimized for the best representation of several quantities which cannot all be represented exactly, is also used in Legendre's work and is most thoroughly developed.
+>*Gauss to Olbers. Brunswick, July 30, 1806*
+
+### Method
+
+Let 
+$$\{(x_1,y_1),(x_2,y_2),\dots,(x_n,y_n)\}$$ 
+be a set of ordered pairs. The problem is to find the straight line that descrive them the best in the sense of least squares. That is, to determine the line $y=\beta_0+\beta_1x$ that minimizes the following function:
+
+$$ \Delta(\beta_0,\beta_1)=(||\underline{e}||_2)^2.$$
+
+Here, $||\cdot||_2$ is the 2-norm and $\underline{e}$ is the fit's error vector defined as:
+
+$$\underline{e}=(e_1,e_2,\dots,e_n) \quad \text{with}\quad e_i=y_i-(\beta_0+\beta_1x_i) \quad \forall i=1,2,\dots,n.$$
+
+Therefore, our objective function is
+
+$$\Delta(\beta_0,\beta_1)=\sum_{i=1}^n (y_i-\beta_0-\beta_1x_i)^2.$$
+
+We can easily procede to optimize via differentiation and obtain the following *normal ecuations system*:
+
+$$ n\hat{\beta_0}+\hat{\beta_1}\sum_{i=1}^{n}x_i=\sum_{i=1}^{n}y_i\\
+\hat{\beta_0}\left(\sum_{i=1}^{n}x_i\right)+\hat{\beta_1}\sum_{i=1}^{n}x_i^2=\sum_{i=1}^{n}x_iy_i.$$
+
+The 2-norm is chose precisely because of this straightforward nature of the differentiation. If you're curious, try to see what happens if one chooses the sum of errors (1-norm) as the objective function or any $p$-norm with $p>2$. 
+
+If we have at least two different $x$ values in our observations, then this system has a solution. When we verify second order conditions we get
+
+$$\hat{\beta_1}=\dfrac{\sum\limits_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum\limits_{i=1}^n(x_i-\bar{x})^2}\\ \hat{\beta_0}=\bar{y}-\hat{\beta_1}\bar{x}.$$
+
+Thus, our *Least Squares line* is:
+
+$$\hat{y}=\hat{\beta_0}+\hat{\beta_1}x\\[0.3cm]
+\hat{y}=\bar{y}+\dfrac{\sum\limits_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum\limits_{i=1}^n(x_i-\bar{x})^2}(x-\bar{x}).$$
+
+## Galton and Regression toward the Mean
+
+Contrary to least squares, @Stigler97 says, the concept of Regression was the result of the efforts of only one individual: Sir Francis Galton. This English anthropologist, cousin to Charles Darwin, was born in Dudeston in 1822 and died in Haslemere in 1911. He studied medicine at Birmingham and Cambridge Hospitals. From 1860 onwards, he devoted solely to scientific research. He published in 1869 one of his greatest work, *Hereditary Genius* [@BioGalton].
+
+It was precisely in this book where he started to outline the concept by analyzing some \`Genius families\` like the Bernoulli in mathematics or the Bach in music. Galton, cited by @Stigler97, proclaimed that 
+
+> It is a universal rule that the unknown kinsman in any degree of any specified man, is probably more mediocre than he
+> *Francis Galton, 1866*
+
+In his analysis this was clear. Galton noted there was a marked tendency for eminence to diminish when it came to the relatives of Jacob Bernoulli or Johan Sebastian Bach, specially as the relationship was more distant. Since measuring genius was too complicated, Sir Francis decided to focus on characteristics like stature [@Stigler97].
+
+![Sir Francis Galton, figure from @BioGalton](/Gauss_Galton/Galton.jpg)
+
+In 1877, he presented his research about it in a lecture before the Royal Institution. Galton observed the statures of 903 adult children and those of their respective 205 parents [@Galton1886]. After adjusting for sex, Galton verified what had been true for his other experiments on seeds, that 
+
+> ... the offspring did *not* tend to resemble their parent seeds in size, but to be always more mediocre than they- to be smaller than their parents, if the parents were large; to be larger than the parents, if the parents were very small.
+>@Galton1886
+
+Moreover, his experiments showed that what he called the *mean filial regression towards mediocrity* was, in the case of human height, of 2/3. 
+
+![Sir Francis Galton's result plate, figure from @Galton1886](/Gauss_Galton/Estaturas.png)
+
+### Simple Linear Regression Model
+
+Galton wanted to explain children's height, given their parents' height. We could think that this relation may be described by a straigth line. That is, let's call $Y$ one person's height and $X$ her parents' averaged height. We have
+
+$$ Y = \beta_0+\beta_1X.$$
+However, we know there are a great (infinite?) number of factors that also come into play. This leads us to think in a *conditional probability* model $F(Y|X)$ where $Y$ is our *interest variable* and $X$ a covariate that explains it, so we could call it an *explanatory variable*. The Linear Regression Model assumes that the following relationship holds, where $x$ is a known quantity and $\beta_0,\beta_1$ and $\sigma^2$ are called parameters:
+
+$$Y|X=x\sim N\left(\beta_0+\beta_1x,\sigma^2\right).$$
+
+Now, we usually don't know the values of said parameters. Thus, we need to use statistics and do *inference* about them, making use of the information that we gather from a set of ordered pairs which we assume were generated independently by this model. 
+
+Here lays the statistical conection between Gauss and his method of Least Squares.
+
+### Gauss-Markov Theorem
+
+Let $\{(x_1,y_1),(x_2,y_2),\dots,(x_n,y_n)\}$ be a set of $n$ ordered pairs that satisfy the following:
+
+i. $y_i=\beta_0+\beta_1x_i+\epsilon_i$;
+ii. $E[\epsilon_i]=0$;
+iii. $Var(\epsilon_i)=\sigma^2$;
+iv. $Cov(\epsilon_i,\epsilon_j)=0  \qquad \forall\; i\neq j$,
+
+where the first three are true for all $i=1,2,\dots,n$.
+
+Then,
+
+>**The Least Squares Estimates are the best linear unbiased estimates in the sense of minimal variance**
+
+This theorem shows that the best linear estimates for $\beta_0$ and $\beta_1$, in the sense of minimal variance, are precisely $\hat{\beta_0}$ and $\hat{\beta_1}$, the least square solutions we discussed before. This reinforces the utility of the 2-norm when using the Least Squares Method. 
+
+## Final thought 
+
+It is always interesting to see how the work of great mathematicians interwines and connects in particular ways. What started as an 'intelectual race' between Gauss and Legendre, ends up surging because of the interest of an anthropologist in studying the genius, why not, of this very same characters and their families! Today, almost a century and a half later, the linear regression is a very powerful model. Its applications are everywhere due to its flexibility and simplicity, desirable qualities of every mathematical model.
+
+## References
+
+<div id="refs"></div>
+
