@@ -105,9 +105,17 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    2rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   min-height: 50%;
+}
+
+.landing{
+  max-width: 90%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  min-height: 50%;
+  text-align: justify;
 }
 
 
@@ -130,6 +138,14 @@ footer {
 @media (min-width: 48em) {
   .content {
     max-width: 38rem;
+    margin-left: 20rem;
+    margin-right: 2rem;
+    margin-bottom: -40px;
+    min-height: 100%;
+  }
+  
+  .landing{
+    max-width: 80%;
     margin-left: 20rem;
     margin-right: 2rem;
     margin-bottom: -40px;
@@ -172,6 +188,7 @@ footer {
 
 footer a,
 .content a,
+.landing a,
 .related-posts li a:hover {
   color: #49757a;
 }

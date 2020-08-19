@@ -417,8 +417,8 @@ a.pagination-item:hover {
 
 .sidenote, .marginnote { float: right;
                          clear: right;
-                         margin-right: -52.5%;
-                         width: 47.5%;
+                         margin-right: -65%;
+                         width: 60%;
                          margin-top: 0;
                          margin-bottom: 0;
                          font-size: 0.8rem;
