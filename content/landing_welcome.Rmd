@@ -1,0 +1,18 @@
+---
+title: "Welcome!"
+author: "Fernando A. Zepeda H."
+date: "2020-08-18"
+output: html_document
+type: welcome
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+I'm Fernando, a Mexican statistician and data scientist passionate about social and political applications. Starting this fall, I will be at the University of Warwick studying the MSc in Statistics. 
+
+Previously, I worked at ThinkData MX, a statistical and public opinion consulting firm based in Mexico City. I hold a BSc in Actuarial Science and a BA in International Relations, both from ITAM, and my dissertation was on multilevel binomial regressions on French electoral data, fitted through Hamiltonian Monte Carlo. I've been a Probability Teacher Assistant at UNAM's Science Faculty and an editor of *Laberintos e Infinitos*, one of ITAM's students magazines. 
+
+You should expect posts on Bayesian statistics, applied data science, polling, politics, sports and some history of statistics. I usually work with R and Stan. Don't hesitate in getting in touch with me through Twitter or Github. 
