@@ -3,7 +3,7 @@ title: "The statistical connection between Gauss and Galton"
 author: "Fernando A. Zepeda H."
 date: "2020-08-02"
 output: html_document
-bibliography: Referencias/biblio_gauss_galton.bib
+bibliography: biblio_gauss_galton.bib
 ---
 
 
