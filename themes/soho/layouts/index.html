@@ -1,14 +1,66 @@
-{{ define "main" -}}
-<div class="posts">
-  {{ range .Site.RegularPages -}}
-    {{ if and (or (eq .Type "post") (eq .Type "article")) (or (not (isset .Params "Hidden")) (eq .Params.Hidden false)) -}}
-    <article class="post">
-      <h1 class="post-title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ define "home" -}}
+<style>
+  .grid-container{
+    display: inline-grid;
+    grid-template-columns: 70% 30%;
+    gap: 50px 10px;
+  }
+</style>
+
+{{ range .Site.RegularPages -}}
+    {{ if eq .Type "welcome" -}}
+      <h1 align="center">
+        {{ .Title }}
       </h1>
+      {{.Content}}
+    {{- end }}
+{{- end }}
+
+<h1 align="center"> Projects </h1>
+  {{ range first 5 (where .Site.RegularPages "Type" "=" "project") -}}
+      <div class="grid-container">
+        <div style="align-content: space-between;">
+          <h2 class="post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h2>
+          <p>
+            {{ if .Description }}
+              {{ .Description }}
+            {{ else }}
+              {{ .Summary }}
+            {{ end }}
+          </p>
+          <div class="read-more-link">
+            <a href="{{ .RelPermalink }}">See more</a>
+          </div>
+        </div>
+        <div style="justify-self: end">
+          <img src="{{ (.Resources.GetMatch "00_project_cover.png").Permalink}}" 
+                 style="width: 90%; height: auto;"></img>
+        </div>
+      </div>
+  {{- end }}
+  {{range .Site.Menus.main}}
+    {{if eq .Identifier "projects"}}
+      <p align="right">
+        <br>
+        <a href="{{ .URL }}">See all projects</a>
+      </p>
+    {{end}}
+  {{end}}
+
+<div class="posts">
+  <h1 align="center"> From the blog <br></h1>
+  {{ range first 5 (where .Site.RegularPages "Type" "in" (slice "post" "article")) -}}
+    <article class="post">
+      <h2 class="post-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h2>
 
       <div class="post-date">
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time> · {{ .ReadingTime }} min read
       </div>
 
       {{ if .Description }}
@@ -23,7 +75,15 @@
       </div>
       {{ end }}
     </article>
-    {{- end }}
+
   {{- end }}
+  {{range .Site.Menus.main}}
+    {{if eq .Identifier "posts"}}
+      <p align="right">
+        <a href="{{ .URL }}">Go to blog</a>
+      </p>
+    {{end}}
+  {{end}}
 </div>
+
 {{- end }}

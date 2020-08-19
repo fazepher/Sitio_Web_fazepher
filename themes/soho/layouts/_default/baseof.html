@@ -57,10 +57,16 @@
 <body>
   {{ partial "sidebar.html" . }}
 
-  <main class="content container">
-  {{ block "main" . -}}{{- end }}
-  </main>
-
+  {{ if .IsHome -}}
+    <main class="landing container">
+      {{ block "home" . -}}{{- end }}
+    </main>
+  {{- else -}}
+    <main class="content container">
+    {{ block "main" . -}}{{- end }}
+    </main>
+  {{end -}}
+  
   {{ partial "footer.html" . }}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
