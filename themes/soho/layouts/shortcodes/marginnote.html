@@ -1,5 +1,5 @@
 <!--https://github.com/shawnohare/hugo-tufte/blob/master/layouts/shortcodes/marginnote.html--> 
-{{ $marginnoteDomIdSuffix := .Ordinal }}
-<label for="marginnote-{{.Page.UniqueID}}-{{ $marginnoteDomIdSuffix }}" class="margin-toggle">&#8853;</label>
+{{ $marginnoteDomIdSuffix := .Ordinal}}
+<label for="marginnote-{{.Page.UniqueID}}-{{ $marginnoteDomIdSuffix }}" class="margin-toggle" style="vertical-align: top; color: #008B8B">&#8859;</label> 
 <input type="checkbox" id="marginnote-{{.Page.UniqueID}}-{{ $marginnoteDomIdSuffix }}" class="margin-toggle"/>
-<span class="marginnote">{{ .Inner }}</span>
+    <span class="marginnote">{{ .Inner }}</span>

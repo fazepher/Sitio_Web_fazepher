@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 *This entry is an English version of an article originally published in Spanish at the [37th issue](http://laberintos.itam.mx/wp/wp-content/uploads/2017/02/N37.pdf) of ITAM students' mathematics and actuarial science magazine,* Laberintos e Infinitos*.*
 
-Both Karl Friedrich Gauss and Sir Francis Galton made big contributions to the development of Statistics. Gauss discovered the method of least squares, not without having a dispute with Legendre. On the other hand, Galton gave us the Law of Regression towards the Mean.`r htmltools::HTML("{{% marginnote %}}A more politically correct name than his original <i>regression toward mediocrity</i>. {{% /marginnote%}}")`
+Both Karl Friedrich Gauss and Sir Francis Galton made big contributions to the development of Statistics. Gauss discovered the method of least squares, not without having a dispute with Legendre. On the other hand, Galton gave us the Law of Regression towards the Mean.`r htmltools::HTML("{{< marginnote >}}A more politically correct name than his original <i>regression toward mediocrity</i>. {{< /marginnote>}}")`
 
 This post's goal is to present both contributions in a brief manner.
 
