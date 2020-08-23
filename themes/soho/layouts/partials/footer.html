@@ -1,6 +1,8 @@
 <footer>
+  
   <div class="copyright">
     &copy; {{ $.Site.Params.copyright }} {{ now.Format "2006"}} · {{ with $.Site.Params.license }}<a href="{{ $.Site.Params.licenseURL }}">{{ . | safeHTML }}</a>{{end}}
+    <p>Site built in {{ partial "icons.html" "r-project" }} with <a href=https://github.com/rstudio/blogdown>{blogdown}</a> and based on the <a href=https://themes.gohugo.io/soho/> Soho Hugo theme</a>.</p>
   </div>
   
   <!-- http://irma.math.unistra.fr/~zeng/2016/04/hugo-hyde/ -->

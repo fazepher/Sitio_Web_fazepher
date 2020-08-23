@@ -417,8 +417,8 @@ a.pagination-item:hover {
 
 .sidenote, .marginnote { float: right;
                          clear: right;
-                         margin-right: -52.5%;
-                         width: 47.5%;
+                         margin-right: -70%;
+                         width: 55%;
                          margin-top: 0;
                          margin-bottom: 0;
                          font-size: 0.8rem;
@@ -462,4 +462,13 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                                                                    margin: 1rem 2.5%;
                                                                    vertical-align: baseline;
                                                                    position: relative; }
+}
+
+/* PARA ICONOS https://www.client9.com/using-font-awesome-icons-in-hugo/ */
+.inline-svg {
+    display: inline-block;
+    height: 1.15rem;
+    width: 1.15rem;
+    top: 0.15rem;
+    position: relative;
 }

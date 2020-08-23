@@ -32,15 +32,21 @@ licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
 [menu]
 
   [[menu.main]]
-  name = "Posts"
+  name = "Projects"
   weight = 100
+  identifier = "projects"
+  url = "/project/"
+  
+  [[menu.main]]
+  name = "Blog"
+  weight = 200
   identifier = "posts"
   url = "/post/"
-
+  
   [[menu.main]]
   name = "About me"
   identifier = "about"
-  weight = 200
+  weight = 300
   url = "/about/"
   
 

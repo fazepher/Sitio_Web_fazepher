@@ -1,0 +1,9 @@
+<div style="justify-self: center; align-self: center">
+  {{ if .Get "href"}}
+    <a href = "{{ .Get "href"}}">
+      <img src="{{ .Get "src"}}" width=60% height=auto align=left></img> 
+    </a>
+  {{else}}
+    <img src="{{ .Get "src"}}" width=60% height=auto align=left></img> 
+  {{end}}
+</div>
