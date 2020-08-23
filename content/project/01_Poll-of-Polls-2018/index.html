@@ -16,8 +16,12 @@ header-includes:
 
 
 
-{{< marginnote >}}<img src=00_project_cover.png></img>{{< /marginnote >}}
-<p>En esta página encontrarás información sobre el modelo de agregación de encuestas que desarrollé para Numérika durante la elección presidencial de 2018 en México.</p>
+{{< marginnote >}}<img src=2018_07_10_estim_evol.png></img>{{< /marginnote >}}
+<p>En esta página encontrarás información sobre el modelo de agregación de encuestas que desarrollé para Numérika durante la elección presidencial de 2018 en México. Los invito a ver el siguiente foro, organizado por Nación 321, en el que los distintos agregadores discutimos sobre el tema:</p>
+<p><br/>
+{{< youtube Wsqg95eC35M>}}
+<br/></p>
+<p>También pueden acceder a mi repositorio del proyecto en <a href="https://github.com/fazepher/Poll_of_Polls_2018">Github</a>, donde pueden encontrar, por ejemplo, el cartel que presenté en la <a href="http://epe2019.eventos.cimat.mx/">XVII Escuela de Probabilidad y Estadística</a> organizada en 2019 por el CIMAT en la ciudad de Guanajuato.</p>
 <div id="objetivo" class="section level2">
 <h2>Objetivo</h2>
 <p>A lo largo de un proceso electoral, las diferentes casas encuestadoras y campañas de los candidatos realizan encuestas con el objetivo de obtener información sobre el estado de las preferencias de los votantes. Debido a la volatilidad natural de las encuestas, en los últimos años han cobrado relevancia los modelos de agregación de encuestas, conocidos como <em>Poll of Polls</em>. Uno de los principales atractivos de estos modelos es que, al considerar varias estimaciones individuales, utilizan una mayor cantidad de información. Asimismo, permiten realizar estimaciones más estables pues tratan de separar el ruido estadístico de la tendencia real. De manera particular, el modelo aquí presentado busca reflejar la incertidumbre existente sobre la intención de voto presidencial en cada semana previa a la jornada electoral, agregando los resultados de las encuestas publicadas por distintos medios electrónicos y escritos desde enero de 2018.</p>
@@ -57,10 +61,7 @@ header-includes:
 <p><br/>
 <img src="2018_07_10_marg_finales.png" />
 <br/></p>
-<p>Hacia el futuro, será importante reflexionar e intentar mejorar el modelo. Existen distintas avenidas a explorar. Una podría ser considerar modos de levantamiento de las encuestas o quizás incorporar información sobre precisiones históricas de las casas encuestadoras. Asimismo, debe valorarse el aporte para la opinión pública de estos modelos de agregación de encuestas. En este sentido, los invito a ver el siguiente foro, organizado por Nación 321, en el que los distintos agregadores discutimos sobre el tema:</p>
-<p><br/>
-{{< youtube Wsqg95eC35M>}}
-<br/></p>
+<p>Hacia el futuro, será importante reflexionar e intentar mejorar el modelo. Existen distintas avenidas a explorar. Una podría ser considerar modos de levantamiento de las encuestas o quizás incorporar información sobre precisiones históricas de las casas encuestadoras. Asimismo, debe valorarse el aporte para la opinión pública de estos modelos de agregación de encuestas.</p>
 </div>
 <div id="metodología" class="section level2">
 <h2>Metodología</h2>
@@ -78,8 +79,9 @@ La evolución del sistema depende del último punto en el tiempo, teniendo como 
 <p>Se requiere completar el modelo asignando distribuciones iniciales a los parámetros. Para no imputar, <em>a priori</em>, un sesgo determinado a ninguna casa encuestadora, se decidió que las distribuciones de los sesgos fueran normales centradas en 0:</p>
 <p><span class="math display">\[ \gamma_c \sim N(0,\Omega_c) \quad \forall \; c=1, 2,\dots, C,\]</span>
 donde <span class="math inline">\(C\)</span> es el número de casas encuestadoras en muestra. A todos los parámetros de varianza les fueron asignadas distribuciones iniciales siguiendo la sugerencia de Cargnoni, Müller y West y mediante pruebas con datos de encuestas para las elecciones presidenciales en México de 2006 y 2012. De manera concreta, estas fueron distribuciones Wishart inversas con 6 grados de libertad y matrices de escala diagonales con elementos iguales a 0.05.</p>
-<p><br/>
-## Referencias</p>
+</div>
+<div id="referencias" class="section level2">
+<h2>Referencias</h2>
 <div id="refs">
 <div id="ref-Cargnoni97">
 <p>Cargnoni, Claudia, Peter Müller, y Mike West. 1997. «Bayesian Forecasting of Multinomial Time Series through Conditionally Gaussian Dynamic Models». <em>Journal of the American Statistical Association</em> 92 (438): 640-47.</p>
