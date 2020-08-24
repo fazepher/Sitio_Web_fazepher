@@ -6,7 +6,6 @@ summarylength = 10
 enableEmoji = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 math = true
-disqusShortname = "www-fazepher-me"
 
 [params]
 description = "\"In God we trust, all others bring data\" \n W.Edwards Deming "
@@ -14,6 +13,8 @@ profilePicture = "images/FAZH_01.jpg"
 copyright = "Fernando Antonio Zepeda Herrera"
 license = "CC BY-SA 4.0"
 licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+disqusShortname = "www-fazepher-me"
+
 
   [[params.socialIcons]]
   icon = "fa-linkedin"
