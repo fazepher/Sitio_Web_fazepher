@@ -12,6 +12,7 @@
   
 </div>
 
+{{ if ne .Dir "about/"}}
 <!-- https://github.com/rstudio/blogdown/issues/52 -->
 <div id="disqus_thread"></div>
 <script>
@@ -23,5 +24,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{{ end }}
 
 {{- end }}
