@@ -6,6 +6,7 @@ summarylength = 10
 enableEmoji = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 math = true
+disqusShortname = "www-fazepher-me"
 
 [params]
 description = "\"In God we trust, all others bring data\" \n W.Edwards Deming "
