@@ -1,5 +1,5 @@
 theme = "soho"
-baseurl = "/"
+baseurl = "https://www.fazepher.me/"
 title = "Fernando A. Zepeda H."
 enableInlineShortcodes = true
 summarylength = 10
