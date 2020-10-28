@@ -14,17 +14,17 @@ type: page
   }
 </style>
 
-I'm Fernando, a Mexican :mexico: statistician and data scientist passionate about social and political applications. Within Statistics and Data Science, I found the perfect field(s?) to combine both my numerical and social inclinations.`r htmltools::HTML("{{< marginnote >}}My favorite subjects in school were always math and history. Going into college, I ended up with a funny combination, studying both a quantitative and a qualitative degree: Actuarial Science and International Relations.{{< /marginnote >}}")` After all: 
+I'm Fernando, a Mexican :mexico: statistician and data scientist passionate about social and political applications. I am currently sudying the MSc in Statistics at the University of Warwick, where I also serve as the course representative. Within Statistics and Data Science, I found the perfect field(s?) to combine both my numerical and social inclinations.`r htmltools::HTML("{{< marginnote >}}My favorite subjects in school were always math and history. Going into college, I ended up with a funny combination, studying both a quantitative and a qualitative degree: Actuarial Science and International Relations.{{< /marginnote >}}")` After all: 
 
 > The best thing of being a statistician is that you get to play in everyones's backyard.
 > *John Tukey*
 
-I've found my work in consulting extremely rewarding. From pulic opinion polling to market research, applied Statistics make me learn something new everyday. Far from being the best artist, I enjoy doing data viz in all of my projects. It's always satisfying when you have a better take or insight by means of better plots. I've also had the opportunity to teach probability to undergraduates, which I loved, so I'm looking forward to keep helping others in this way. My bachelor's degrees dissertation was on multilevel binomial regressions on French electoral data, fitted through Hamiltonian Monte Carlo. At ITAM, I had the opportunity of being editor of *Laberintos e Infinitos*, one of the students' magazines.
+I've found my work in consulting extremely rewarding. From pulic opinion polling to market research, applied Statistics make me learn something new everyday. Far from being the best artist, I enjoy doing data viz in all of my projects. It's always satisfying when you have a better take or insight by means of better plots. I've also had the opportunity to teach probability to undergraduates, which I loved, so I'm looking forward to keep helping others in this way. My bachelor's degrees dissertation was on multilevel binomial regressions on French electoral data, fitted through Hamiltonian Monte Carlo. At ITAM, I had the opportunity of being editor of *Laberintos e Infinitos*, one of the students' magazines. At Warwick, I also colaborate with the Warwick Data Science Society.
 
 
 On a lighter note, I'm an avid football fan,`r htmltools::HTML("{{< marginnote >}}I mean football in both <i>fútbol</i> :soccer: and, well, :football: football... Always rooting for my beloved Necaxa :zap: and the Miami Dolphins :dolphin:!{{< /marginnote >}}")` although I am a much better table tennis player. I like reading historic novels and poetry, as well as dancing, singing, and playing the guitar, although I should do it more. Always looking to practice my French and Italian!`r htmltools::HTML("{{< marginnote >}}Si alguien quiere practicar su español, a la orden :raised_hands:.{{< /marginnote >}}")` 
 
-Starting this fall, I will be at the University of Warwick studying the MSc in Statistics. Please, do get in touch at `fazepher@gmail.com` or on social media. 
+Please, do get in touch at `fazepher@gmail.com` or on social media. 
 
 ## Some of my favorite tools 
 
@@ -103,6 +103,17 @@ Most of my work is in R, within R Studio. When doing Bayesian statistics, my ove
 
 <div class="grid-container">
   `r htmltools::HTML("
+    {{< img-container src=WDSS.jpg href=https://www.wdss.io/ >}}
+    <div style=place-self: start;>
+      <h3>R Mentor</h3>
+      <p>
+        Warwick Data Science Society
+        <br> 
+        Into the Tidyverse course
+        <br>
+        2019 
+      </p>
+    </div>
     {{< img-container src=UNAMCienciasLogo.png href=https://pagina.fciencias.unam.mx/ >}}
     <div style=place-self: start;>
       <h3>Teacher Assistant</h3>
@@ -121,13 +132,31 @@ Most of my work is in R, within R Studio. When doing Bayesian statistics, my ove
 
 <div class="grid-container">
   `r htmltools::HTML("
+    {{< img-container src=WarwickLogo.png href=https://warwick.ac.uk/fac/sci/statistics/ >}}
+    <div style=justify-self: start;>
+      <h3>Course Representative M.Sc. in Statistics</h3>
+      <p>
+        University of Warwick
+        <br> 
+        2020-2021
+      </p>
+    </div>
+    {{< img-container src=ThinkDataLogo.jpg href=https://www.thinkdata.mx/ >}}
+    <div style=justify-self: start;>
+      <h3>External Consultant</h3>
+      <p>
+        ThinkData MX
+        <br> 
+        2020 - Current
+      </p>
+    </div>
     {{< img-container src=ThinkDataLogo.jpg href=https://www.thinkdata.mx/ >}}
     <div style=justify-self: start;>
       <h3>Data Science Consultant</h3>
       <p>
         ThinkData MX
         <br> 
-        2019 - Current
+        2019 - 2020
       </p>
     </div>
     {{< img-container src=NumerikaLogo.png href=https://twitter.com/Numerika >}}
