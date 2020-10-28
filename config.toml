@@ -35,16 +35,16 @@ disqusShortname = "fazepher"
 [menu]
 
   [[menu.main]]
-  name = "Projects"
-  weight = 100
-  identifier = "projects"
-  url = "/project/"
-  
-  [[menu.main]]
   name = "Blog"
-  weight = 200
+  weight = 100
   identifier = "posts"
   url = "/post/"
+  
+  [[menu.main]]
+  name = "Projects"
+  weight = 200
+  identifier = "projects"
+  url = "/project/"
   
   [[menu.main]]
   name = "About me"
