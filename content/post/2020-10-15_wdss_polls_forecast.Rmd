@@ -1,0 +1,23 @@
+---
+title: "WDSS Student Speaker Series: Polls, prediction, and the POTUS"
+author: "Fernando A. Zepeda H."
+date: "2020-10-15"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+With the US Presidential election coming soon, I was invited to give a talk for the first session of WDSS' Student Speaker Series. You’ve probably heard that Joe Biden will beat Donald Trump, but we all remember that the same was said of Hillary Clinton, so, how likely is it that Biden wins it all? In this talk I explored as a case study how forecasting models for the POTUS election work. In doing so, I also reflected on what lessons we can learn regarding polling and the more general task of forecasting elections around the world.
+
+The talk is available here:`r htmltools::HTML("{{< marginnote >}}You can also watch Tim Hargreaves discussing Simulated Annealing via an example of Sudoku solving and Martin Smit talking about Automatic Differentiation.. {{< /marginnote>}}")` 
+
+<br/>
+`r htmltools::HTML("{{< youtube CTC2EVdNUcA>}}")`
+<br/>
+
+If you are interested in the slides for my talk, you can download a static version [here](https://github.com/fazepher/WDSS_Polls_Forecasts).
+
+ 
