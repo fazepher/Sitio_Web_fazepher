@@ -1,0 +1,19 @@
+---
+title: "Tidyverse Datatón x Oberarzbacher"
+author: "Fernando A. Zepeda H."
+date: "2021-02-03"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Tuve la oportunidad de colaborar con algunos exalumnos del Profesor Oberarzbacher en un datatón de recaudación de fondos. Di un taller de Tidyverse, las diapositivas son las siguientes:
+
+```{r echo=FALSE}
+knitr::include_url("https://fazepher.github.io/Tidyverse_Oberarzbacher/Tidyverse_con_R.html#1")
+```
+
+Pueden verse en pantalla completa [aquí](https://fazepher.github.io/Tidyverse_Oberarzbacher/Tidyverse_con_R.html#1)
