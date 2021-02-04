@@ -1,5 +1,5 @@
 ---
-title: "Hola!"
+title: "¡Hola!"
 author: "Fernando A. Zepeda H."
 date: "2020-08-18"
 output: html_document
@@ -25,6 +25,8 @@ I've found my work in consulting extremely rewarding. From pulic opinion polling
 On a lighter note, I'm an avid football fan,`r htmltools::HTML("{{< marginnote >}}I mean football in both <i>fútbol</i> :soccer: and, well, :football: football... Always rooting for my beloved Necaxa :zap: and the Miami Dolphins :dolphin:!{{< /marginnote >}}")` although I am a much better table tennis player. I like reading historic novels and poetry, as well as dancing, singing, and playing the guitar, although I should do it more. Always looking to practice my French and Italian!`r htmltools::HTML("{{< marginnote >}}Si alguien quiere practicar su español, a la orden :raised_hands:.{{< /marginnote >}}")` 
 
 Please, do get in touch at `fazepher@gmail.com` or on social media. 
+
+<hr>
 
 ## Some of my favorite tools 
 
@@ -57,6 +59,7 @@ Most of my work is in R, within R Studio. When doing Bayesian statistics, my ove
   </div>")`
 </div>
 
+<hr>
 ## Education 
 
 <div class="grid-container">
@@ -98,8 +101,8 @@ Most of my work is in R, within R Studio. When doing Bayesian statistics, my ove
     </div>")`
 </div>
 
-# Teaching
-<br>
+<hr>
+## Teaching
 
 I'm always available for individual or groups tutorials in a range of topics including, but not limited to, probability and statistics, R, Shiny or Stan. 
 
@@ -129,8 +132,8 @@ I'm always available for individual or groups tutorials in a range of topics inc
     </div>")`
 </div>
 
-# Experience
-<br>
+<hr>
+## Experience
 
 <div class="grid-container">
   `r htmltools::HTML("
@@ -190,7 +193,8 @@ I'm always available for individual or groups tutorials in a range of topics inc
     </div>")`
 </div>
 
-# Other activities
+<hr>
+## Other activities
 
 <div class="grid-container">
   `r htmltools::HTML("
@@ -223,7 +227,8 @@ I'm always available for individual or groups tutorials in a range of topics inc
     </div>")`
 </div>
 
-# Memberships
+<hr>
+## Memberships
 
 <div class="grid-container">
   `r htmltools::HTML("
