@@ -12,6 +12,25 @@
   
 </div>
 
+<div>
+  <hr>
+  <p align="center">Also from de blog</p>
+  <div style="float:left">
+    {{ with .NextInSection }}
+      <i class="fas fa-arrow-left", style="color:#49757a",href="{{ .URL }}"></i>
+      <a href="{{ .Permalink }}", style="font-size: 10px">{{ .Title}}</a>
+    {{ end }}
+  </div>
+  <div style="float:right">
+    {{ with .PrevInSection }}
+      <a href="{{ .Permalink }}", style="font-size: 10px">{{ .Title}}</a>
+      <i class="fas fa-arrow-right", style="color:#49757a",href="{{ .URL }}"></i>
+    {{ end }}
+  </div>
+  <br>
+  <hr>
+</div>
+
 {{ if ne .Dir "about/"}}
 <!-- https://github.com/rstudio/blogdown/issues/52 -->
 <div id="disqus_thread"></div>
