@@ -5,25 +5,37 @@
     grid-template-columns: 70% 30%;
     gap: 50px 10px;
   }
+  
+  .home-sec{
+    margin-bottom: .5rem;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #313131;
+    text-rendering: optimizeLegibility;
+    font-size: 2rem;
+  }
+  
 </style>
 
 {{ range .Site.RegularPages -}}
     {{ if eq .Type "welcome" -}}
-      <h1 align="center">
+      <h1 align="left", style="color:#49757a; font-weight:normal">
         {{ .Title }}
       </h1>
-      {{.Content}}
+      <div style="margin-left: 40px">{{.Content}}</div>
+      
     {{- end }}
 {{- end }}
 
+
 <div class="posts">
-  <h1 align="center"> From the blog <br></h1>
+  <h1 align="left", style="color:#49757a; font-weight:normal"> From the blog <br></h1>
   {{ range first 5 (where .Site.RegularPages "Type" "in" (slice "post" "article")) -}}
     <article class="post">
-      <h2 class="post-title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <div style="margin-left: 40px">
+        <h2 class="post-title">
+        <a href="{{ .Permalink }}", style="color:#313131; font-weight:normal"> {{ .Title }}</a>
       </h2>
-
       <div class="post-date">
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">
           {{ .Date.Format "Jan 2, 2006" }}
@@ -38,9 +50,12 @@
 
       {{ if .Truncated }}
       <div class="read-more-link">
-        <a href="{{ .RelPermalink }}">Read More</a>
+        <a href="{{ .RelPermalink }}", style="font-size:12pt">Read More</a>
       </div>
       {{ end }}
+      
+      </div>
+      
     </article>
 
   {{- end }}
@@ -53,12 +68,12 @@
   {{end}}
 </div>
 
-<h1 align="center"> Projects </h1>
+<h1 align="left", style="color:#49757a; font-weight:normal"> Projects </h1>
   {{ range first 5 (where .Site.RegularPages "Type" "=" "project") -}}
       <div class="grid-container">
-        <div style="align-content: space-between;">
+        <div style="align-content: space-between; margin-left:40px">
           <h2 class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <a href="{{ .Permalink }}", style="color:#313131; font-weight:normal">{{ .Title }}</a>
           </h2>
           <p>
             {{ if .Description }}
@@ -73,7 +88,7 @@
         </div>
         <div style="justify-self: end">
           <img src="{{ (.Resources.GetMatch "00_project_cover.png").Permalink}}" 
-                 style="width: 90%; height: auto;"></img>
+                 style="width: 80%; height: auto;"></img>
         </div>
       </div>
   {{- end }}
