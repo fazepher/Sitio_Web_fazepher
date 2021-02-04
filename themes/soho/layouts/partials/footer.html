@@ -1,4 +1,4 @@
-<footer>
+<footer style="margin-left:400px">
   
   <div class="copyright">
     &copy; {{ $.Site.Params.copyright }} {{ now.Format "2006"}} · {{ with $.Site.Params.license }}<a href="{{ $.Site.Params.licenseURL }}">{{ . | safeHTML }}</a>{{end}}
@@ -9,5 +9,7 @@
   <script type="text/javascript"
    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
  </script>
-
+  
+  <br>
+  
 </footer>

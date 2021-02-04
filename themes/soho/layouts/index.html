@@ -1,5 +1,56 @@
 {{ define "home" -}}
+
+<!-- https://codepen.io/Oddgson/pen/VPrYbv -->
 <style>
+  
+  .wrapper{
+	  padding-bottom: 40px;
+  }
+
+  .divider{
+	  position: relative;
+	  margin-top: 40px;
+	  height: 1px;
+  }
+  
+  .div-transparent:before{
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 5%;
+	  right: 5%;
+	  width: 90%;
+	  height: 1px;
+	  background-image: linear-gradient(to right, transparent, #7a7a7a, transparent);
+  }
+  
+  .div-arrow-down:after{
+	  content: "";
+  	position: absolute;
+  	z-index: 1;
+  	top: -7px;
+	  left: calc(50% - 7px);
+  	width: 14px;
+	  height: 14px;
+	  transform: rotate(45deg);
+	  background-color: white;
+	  border-bottom: 1px solid #7a7a7a;
+  	border-right: 1px solid #7a7a7a;
+  }
+  
+  .div-stopper:after{
+	  content: "";
+	  position: absolute;
+	  z-index: 1;
+	  top: -6px;
+	  left: calc(50% - 7px);
+	  width: 14px;
+	  height: 12px;
+	  background-color: white;
+	  border-left: 1px solid #7a7a7a;
+	  border-right: 1px solid #7a7a7a;
+  }
+
   .grid-container{
     display: inline-grid;
     grid-template-columns: 70% 30%;
@@ -17,22 +68,32 @@
   
 </style>
 
+<div align="center">
+  <h3 style="font-family: Georgia, serif;"> "In God we trust, all others bring data"</h3>
+  <p style="font-family: Georgia, serif"> W.Edwards Deming </p>
+</div>
+
+<img style="width:100%;" id="image" src="images/portada_warwick_snow_1_larga.png">
+
 {{ range .Site.RegularPages -}}
     {{ if eq .Type "welcome" -}}
       <h1 align="left", style="color:#49757a; font-weight:normal">
         {{ .Title }}
       </h1>
-      <div style="margin-left: 40px">{{.Content}}</div>
+      <div>{{.Content}}</div>
       
     {{- end }}
 {{- end }}
 
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
 
 <div class="posts">
   <h1 align="left", style="color:#49757a; font-weight:normal"> From the blog <br></h1>
-  {{ range first 5 (where .Site.RegularPages "Type" "in" (slice "post" "article")) -}}
+  {{ range first 2 (where .Site.RegularPages "Type" "in" (slice "post" "article")) -}}
     <article class="post">
-      <div style="margin-left: 40px">
+      <div style="margin-left: 50px">
         <h2 class="post-title">
         <a href="{{ .Permalink }}", style="color:#313131; font-weight:normal"> {{ .Title }}</a>
       </h2>
@@ -68,6 +129,10 @@
   {{end}}
 </div>
 
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
 <h1 align="left", style="color:#49757a; font-weight:normal"> Projects </h1>
   {{ range first 5 (where .Site.RegularPages "Type" "=" "project") -}}
       <div class="grid-container">
@@ -100,5 +165,9 @@
       </p>
     {{end}}
   {{end}}
-  
+
+<div class="wrapper">
+	<div class="divider div-transparent div-stopper"></div>
+</div>
+
 {{- end }}
