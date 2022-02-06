@@ -1,0 +1,117 @@
+---
+title: "Binomial Puzzles: Warwick Statistics Department Puzzle"
+author: "Fernando A. Zepeda H."
+date: "2022-02-06"
+output: html_document
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>The Department of Statistics at Warwick recently started a new outreach series of puzzles. I found the first one quite interesting. This post is my proposed solution to it.</p>
+<div id="the-puzzle" class="section level3">
+<h3>The Puzzle</h3>
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D4742750419171705%26id%3D154711181309008&amp;show_text=true&amp;width=500" width="500" height="673" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+</iframe>
+</div>
+<div id="my-solution" class="section level3">
+<h3>My Solution</h3>
+<p>So, we are told that we have <span class="math inline">\(n\)</span> fair coins and we flip them. We remove those that landed tails and flip again the heads. We need to give the distribution of the number of heads after this second round. This means that if we denote as <span class="math inline">\(X\)</span> the number of coins we would flip in the second round and <span class="math inline">\(H\)</span> the number of final heads we have:
+<span class="math display">\[X\sim Bin(n, p = 0.5) \quad\text{ and }\quad H|X=x \sim Bin(x, p = 0.5),\]</span>
+we are asked about the unconditional distribution of <span class="math inline">\(H\)</span>.</p>
+<p>However we can rephrase the problem as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Flip each of the <span class="math inline">\(n\)</span> fair coins twice</li>
+<li>Call it a success whenever both flips are heads.</li>
+<li>What is the distribution of the number of succesesses?</li>
+</ol>
+<p>This is equivalent, but it makes the solution apparent. We are being asked about another Binomial distribution, just that now the probability of success is that of having two heads in two consecutive independent fair coin tosses; which is just <span class="math inline">\(0.5(0.5)=0.25\)</span>. Hence,
+<span class="math display">\[H \sim Bin(n, p = 0.25).\]</span></p>
+<p>If you are still not convinced, let’s provide a mathematical proof. In fact, we can even generalize this problem by not requiring the tosses to be fair or even have the same probability in both rounds. The more general result is that
+<span class="math display">\[H \sim Bin(n, p = p_1p_2),\]</span>
+where <span class="math inline">\(p_i\)</span> is the probability of heads in the <span class="math inline">\(i\)</span>-th round.</p>
+<p>Indeed,
+<span class="math display">\[
+\begin{align*}
+P(H = h) &amp;= \sum_{x = 0}^n P(H = h | X = x)P(X=x) \\
+&amp;= \sum_{x = h}^n {{x}\choose{h}}p_2^h(1-p_2)^{x-h} {{n}\choose{x}}p_1^x(1-p_1)^{n-x}\\
+&amp;=\sum_{x = h}^n {{n}\choose{h}}{{n-h}\choose{x-h}}p_2^h(1-p_2)^{x-h}p_1^x(1-p_1)^{n-x}\\
+&amp;={{n}\choose{h}} \sum_{k = 0}^{n-h} {{n-h}\choose{k}} p_2^h(1-p_2)^{(k+h)-h}p_1^{k+h}(1-p_1)^{n-(k+h)}\\
+&amp;={{n}\choose{h}}(p_1p_2)^h \sum_{k = 0}^{n-h} {{n-h}\choose{k}} [p_1(1-p_2)]^k(1-p_1)^{(n-h)-k}\\
+&amp;={{n}\choose{h}}(p_1p_2)^h\left[p_1(1-p_2) + (1-p_1)\right]^{n-h}\\
+&amp;={{n}\choose{h}}(p_1p_2)^h(1-p_1p_2)^{n-h},
+\end{align*}
+\]</span>
+where we used a change of variable <span class="math inline">\(k = x-h\)</span> and the second to last step follows from the <a href="https://en.wikipedia.org/wiki/Binomial_theorem#Statement">Binomial Theorem</a>. We recognize this last expression as the probability mass function of a Binomial random variable with paramenters <span class="math inline">\(n\)</span> and <span class="math inline">\(p=p_1p_2\)</span>, as claimed.</p>
+</div>
+<div id="bonus-question" class="section level3">
+<h3>Bonus Question</h3>
+<p>As for the <em>Bonus question</em>, it is also an interesting exercise. If we start with <span class="math inline">\(n=1600\)</span> fair coins and at each turn we eliminate those landing tails, we wonder, how many rounds on average we will have before running out of coins.</p>
+<p>A first approximation would be to say that, on average, we would expect to lose half of the coins each time. After the first toss we will end up with around <span class="math inline">\(800\)</span>, then <span class="math inline">\(400\)</span>, and after <span class="math inline">\(6\)</span> round we would expect to have only around <span class="math inline">\(25\)</span> coins. Now we are expecting to have an odd number of coins but we could keep halving until we have close to a single coin. That is, after <span class="math inline">\(10\)</span> rounds, <span class="math inline">\(\dfrac{1600}{2^{10}}\approx 1.5625\)</span> and so that we may expect to have at least an eleventh round before running out of coins. But, is the answer then <span class="math inline">\(11\)</span>, <span class="math inline">\(12\)</span>, <span class="math inline">\(13\)</span>,…?</p>
+<p>Just like with the main puzzle, by rephrasing the problem in terms of flipping all the <span class="math inline">\(n\)</span> coins and just considering a different notion of success we can come up with a better solution. Let us focus on a single coin; we would keep flipping it as long as it keeps turning heads. Well, the number of times we will flip said coin can be modeled as a Geometric random variable where now the success is landing tails. We see then that we will run out of coins the last time where a given coin lands tails for the first time. This is just to say that we are interested in the maximum of a series of <span class="math inline">\(n\)</span> independent Geometric random variables with parameter <span class="math inline">\(p=0.5\)</span> or, more precisely, in its expected value.</p>
+<p>Mathematically, let us denote as <span class="math inline">\(X\)</span> the number of flips of a coin before observing the first tail. Then <span class="math inline">\(X \sim Geo(p)\)</span>, where we are now generalizing and not limiting ourselves to the case of equiprobability; although, contrary to the main puzzle, here we do keep assuming that the probability of tails in each round remains the same. Then
+<span class="math display">\[\tau := \max\lbrace X_1, X_2, \dots, X_n \rbrace \sim F_\tau,\]</span>
+where,
+<span class="math display">\[F_\tau(t) = P(\tau \leq t) = \left[P(X \leq t)\right]^n = \left[1-(1-p)^t\right]^n.\]</span></p>
+<p>We can then use the survival form of the expectation to have the following expression:
+<span class="math display">\[E[\tau] = \sum_{t = 0}^\infty P(\tau &gt; t) = \sum_{t = 0}^\infty 1 - \left[1-q^t\right]^n,\]</span>
+where <span class="math inline">\(q=1-p\)</span> is the probability of heads. Now, without being a formal proof, we see that this sum will converge since the terms will go relatively quickly to <span class="math inline">\(0\)</span> as <span class="math inline">\(t\)</span> grows. This allows us to propose an <code>R</code> function that approximates the sum for us:</p>
+<pre class="r"><code>ev_max_geo &lt;- function(n, q, max_iter = 1000, tol = 1e-10){
+  
+  ev_tau &lt;- 0
+  s_t &lt;- tol + 3
+  t &lt;- 0
+  while(s_t &gt; tol &amp;&amp; t &lt;= max_iter){
+    s_t &lt;- 1 - (1-q^t)^n
+    ev_tau &lt;- ev_tau + s_t
+    t &lt;- t + 1
+  }
+  
+  return(ev_tau)
+  
+}
+
+ev_max_geo(n = 1600, q = 0.5)</code></pre>
+<pre><code>## [1] 11.97705</code></pre>
+<p>The solution is, rounding, 12!</p>
+<p>We can go a little bit further with <code>R</code> and verify via Monte Carlo that this is correct. We can simulate <span class="math inline">\(10,000\)</span> experiments each starting with <span class="math inline">\(1600\)</span> coins</p>
+<pre class="r"><code>ruin_exp &lt;- function(n, q, max_k = 1e5){
+  
+  k &lt;- 0
+  
+  while(n &gt; 0 &amp;&amp; k &lt;= max_k){
+    n &lt;- rbinom(1, size = n, prob = q)
+    k &lt;- k + 1
+  }
+  
+  return(k)
+  
+}
+
+set.seed(220206)
+tau &lt;- rep(NA, 10000)
+for(i in seq_along(tau)){
+  tau[i] &lt;- ruin_exp(n = 1600, q = 0.5)
+}
+
+summary(tau)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    8.00   11.00   12.00   11.96   13.00   27.00</code></pre>
+<p>In fact, we have the following approximation to the distribution of <span class="math inline">\(\tau\)</span>:</p>
+<pre class="r"><code>library(ggplot2)
+library(fazhthemes)
+
+hist_tau &lt;- ggplot(data = data.frame(tau = tau), 
+                   aes(x = tau, y=..density..)) + 
+  geom_histogram(fill = &quot;steelblue4&quot;, color = &quot;steelblue4&quot;, 
+                 alpha = 0.3, binwidth = 1, center = 0) + 
+  geom_vline(xintercept = 12, color = &quot;chocolate2&quot;) + 
+  labs(x = &quot;Rounds&quot;, y = &quot;Density&quot;, 
+       title = &quot;Number of rounds before running out of heads&quot;, 
+       subtilte = &quot;starting with 1600 fair coins&quot;) + 
+  scale_x_continuous(breaks = 0:max(tau)) + 
+  lucify_theme_classic()
+
+plot(hist_tau)</code></pre>
+<p><img src="/post/2022-02-06_wstats_puzzle_01_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
