@@ -1,0 +1,21 @@
+---
+title: "WDSS Papers and Code Club: Law, Sejdinovic et al (2018)"
+author: "Fernando A. Zepeda H."
+date: "2022-02-15"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I was invited to comment a paper as part of WDSS' Papers and Code Club. We discussed *Variational Learning on Aggregate Outputs with Gaussian Process* by Law, Sejdinovic et al (2018). The paper and appendices can be found [here](https://proceedings.neurips.cc/paper/2018/hash/24b43fb034a10d78bec71274033b4096-Abstract.html) and it has its own [Github repository](https://github.com/hcllaw/VBAgg).
+
+These are the slides:
+
+```{r echo=FALSE}
+knitr::include_url("https://fazepher.github.io/VBAgg-Pres-WDSS/VBagg_Reading_WDSS.html#1")
+```
+
+They can be seen in full screen  [here](https://fazepher.github.io/VBAgg-Pres-WDSS/VBagg_Reading_WDSS.html#1)
