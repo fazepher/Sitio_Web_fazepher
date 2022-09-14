@@ -167,6 +167,35 @@
   {{end}}
 
 <div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<h1 align="left", style="color:#49757a; font-weight:normal"> Posters </h1>
+  {{ range first 5 (where .Site.RegularPages "Type" "=" "poster") -}}
+      <div class="grid-container">
+        <div style="align-content: space-between; margin-left:40px">
+          <h2 class="post-title">
+            <a href="{{ .Permalink }}", style="color:#313131; font-weight:normal">{{ .Title }}</a>
+          </h2>
+        </div>
+        <div style="justify-self: end">
+          <a href = "{{ .Permalink }}">
+            <img src="{{ (.Resources.GetMatch "00_poster_cover.png").Permalink}}" 
+                 style="width: 80%; height: auto;"></img>
+          </a>
+        </div>
+      </div>
+  {{- end }}
+  {{range .Site.Menus.main}}
+    {{if eq .Identifier "posters"}}
+      <p align="right">
+        <br>
+        <a href="{{ .URL }}">See all posters</a>
+      </p>
+    {{end}}
+  {{end}}
+  
+<div class="wrapper">
 	<div class="divider div-transparent div-stopper"></div>
 </div>
 

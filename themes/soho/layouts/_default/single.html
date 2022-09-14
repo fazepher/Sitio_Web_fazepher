@@ -12,6 +12,7 @@
   
 </div>
 
+{{if or (eq .Type "post") (eq .Type "article")}}
 <div>
   <hr>
   <p align="center">Also from the blog</p>
@@ -30,6 +31,7 @@
   <br>
   <hr>
 </div>
+{{ end }}
 
 {{ if ne .Dir "about/"}}
 <!-- https://github.com/rstudio/blogdown/issues/52 -->

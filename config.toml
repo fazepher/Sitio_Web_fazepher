@@ -46,9 +46,15 @@ disqusShortname = "fazepher"
   url = "/project/"
   
   [[menu.main]]
+  name = "Posters"
+  weight = 300
+  identifier = "posters"
+  url = "/posters/"
+  
+  [[menu.main]]
   name = "About me"
   identifier = "about"
-  weight = 300
+  weight = 400
   url = "/about/"
   
 
