@@ -10,3 +10,8 @@ Click [here to view pdf](FAZH_UNGA_poster_YRM221025.pdf) or on the image below:
 
 [![Foo](00_poster_cover.png)](FAZH_UNGA_poster_YRM221025.pdf)
 
+### References 
+
+- Bailey, Michael A., Anton Strezhnev, and Erik Voeten. 2017. “Estimating Dynamic State Preferences from United Nations Voting Data.” Journal of Conflict Resolution 61 (2): 430–56. https://doi.org/10.1177/0022002715595700.
+- Bailey, Michael A., and Erik Voeten. 2018. “A Two-Dimensional Analysis of Seventy Years of United Nations Voting.” Public Choice 176 (1-2): 33–55. https://doi.org/10.1007/s11127-018-0550-4.
+- Lauderdale, Benjamin E., and Tom S. Clark. 2014. “Scaling Politically Meaningful Dimensions Using Texts and Votes.” American Journal of Political Science 58 (3): 754–71.
