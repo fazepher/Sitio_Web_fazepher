@@ -1,0 +1,13 @@
+---
+title: "D-ALPS"
+author: "Fernando A. Zepeda H."
+date: "2023-03-15"
+output: html_document
+type: poster
+---
+
+Click [here to view pdf](d-alps-bayescomp23.pdf) or on the image below:
+
+[![Foo](00_poster_cover.png)](d-alps-bayescomp23.pdf)
+
+This poster is presented at [BayesComp23](https://bayescomp2023.com/home)
